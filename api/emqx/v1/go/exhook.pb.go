@@ -1,4 +1,3 @@
-//protoc --proto_path=.   --go_out=. --go-grpc_out=. --go-http_out=. --go-errors_out=.  *.proto
 //------------------------------------------------------------------------------
 // Copyright (c) 2020-2022 EMQ Technologies Co., Ltd. All Rights Reserved.
 //

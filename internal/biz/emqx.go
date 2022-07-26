@@ -2,7 +2,6 @@ package biz
 
 import (
 	"context"
-	"time"
 
 	"github.com/go-kratos/kratos/v2/log"
 )
@@ -13,16 +12,18 @@ var (
 )
 
 // MqttMsg  MQTT 消息
+// MqttMsg  MQTT 消息
 type MqttMsg struct {
-	ID      int64     `gorm:"column:id" db:"id" json:"id" form:"id"`
-	Msgid   string    `gorm:"column:msgid" db:"msgid" json:"msgid" form:"msgid"`
-	Topic   string    `gorm:"column:topic" db:"topic" json:"topic" form:"topic"`
-	Sender  string    `gorm:"column:sender" db:"sender" json:"sender" form:"sender"`
-	Node    string    `gorm:"column:node" db:"node" json:"node" form:"node"`
-	Qos     int64     `gorm:"column:qos" db:"qos" json:"qos" form:"qos"`
-	Retain  int64     `gorm:"column:retain" db:"retain" json:"retain" form:"retain"`
-	Payload string    `gorm:"column:payload" db:"payload" json:"payload" form:"payload"`
-	Arrived time.Time `gorm:"column:arrived" db:"arrived" json:"arrived" form:"arrived"`
+	ID        int64  `gorm:"column:id" db:"id" json:"id" form:"id"`
+	Msgid     string `gorm:"column:msgid" db:"msgid" json:"msgid" form:"msgid"`
+	Topic     string `gorm:"column:topic" db:"topic" json:"topic" form:"topic"`
+	Sender    string `gorm:"column:sender" db:"sender" json:"sender" form:"sender"`
+	Node      string `gorm:"column:node" db:"node" json:"node" form:"node"`
+	Qos       int64  `gorm:"column:qos" db:"qos" json:"qos" form:"qos"`
+	Retain    int64  `gorm:"column:retain" db:"retain" json:"retain" form:"retain"`
+	Payload   string `gorm:"column:payload" db:"payload" json:"payload" form:"payload"`
+	Arrived   uint64 `gorm:"column:arrived" db:"arrived" json:"arrived" form:"arrived"`
+	Timestamp uint64 `gorm:"column:timestamp" db:"timestamp" json:"timestamp" form:"timestamp"`
 }
 
 func (MqttMsg) TabName() string {
